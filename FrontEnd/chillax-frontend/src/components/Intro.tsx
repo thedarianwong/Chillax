@@ -3,7 +3,7 @@ import { Grid, Paper, Typography, styled, Box } from "@mui/material";
 
 const HeroImage = styled(Paper)({
   height: "50vh",
-
+  background: "url(https://source.unsplash.com/random)",
   backgroundSize: "cover",
   backgroundPosition: "center",
   display: "flex",
