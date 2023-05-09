@@ -12,6 +12,8 @@ const App: React.FC = () => {
       <Intro />
       <SearchBar />
       <Activities />
+      <Activities />
+      <Activities />
     </div>
   );
 };
