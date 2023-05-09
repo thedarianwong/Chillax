@@ -1,9 +1,12 @@
 import React from "react";
+import introImage from "./images/intro-image.jpg";
+
 import { Grid, Paper, Typography, styled, Box } from "@mui/material";
 
 const HeroImage = styled(Paper)({
-  height: "50vh",
-  background: "url(https://source.unsplash.com/random)",
+  height: "60vh",
+  background: `url(${introImage})`,
+  opacity: 1.4,
   backgroundSize: "cover",
   backgroundPosition: "center",
   display: "flex",
@@ -12,8 +15,10 @@ const HeroImage = styled(Paper)({
 });
 
 const HeroText = styled("div")(({ theme }) => ({
-  backgroundColor: "rgba(255, 255, 255, 0.7)",
+  backgroundColor: "rgba(205, 138, 210, 0.5)",
   padding: theme.spacing(2),
+  width: "50%",
+  textAlign: "center",
 }));
 
 const Intro: React.FC = () => {
@@ -23,10 +28,10 @@ const Intro: React.FC = () => {
         <Grid item xs={12}>
           <HeroImage>
             <HeroText>
-              <Typography variant="h4" gutterBottom>
-                Welcome to Your Web App!
+              <Typography variant="h1" gutterBottom fontWeight="bold">
+                Welcome to Chillax!
               </Typography>
-              <Typography variant="body1">
+              <Typography variant="body1" fontSize="1.7rem">
                 Discover and join amazing events and activities posted by users
                 just like you!
               </Typography>

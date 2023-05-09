@@ -4,6 +4,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
   boxShadow: "none",
+  backgroundColor: "rgba(0, 0, 0)",
 }));
 
 const StyledTitle = styled(Typography)({
