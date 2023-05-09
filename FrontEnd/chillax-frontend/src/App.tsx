@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
 import SearchBar from "./components/SearchBar";
+import Activities from "./components/Activities";
 
 const App: React.FC = () => {
   return (
@@ -10,6 +11,7 @@ const App: React.FC = () => {
       <Header />
       <Intro />
       <SearchBar />
+      <Activities />
     </div>
   );
 };

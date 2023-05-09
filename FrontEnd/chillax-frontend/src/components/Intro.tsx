@@ -15,10 +15,14 @@ const HeroImage = styled(Paper)({
 });
 
 const HeroText = styled("div")(({ theme }) => ({
-  backgroundColor: "rgba(205, 138, 210, 0.5)",
+  backgroundColor: "rgba(205, 138, 210, 0.4)",
   padding: theme.spacing(2),
   width: "50%",
   textAlign: "center",
+  [theme.breakpoints.down("sm")]: {
+    width: "90%",
+    padding: theme.spacing(1),
+  },
 }));
 
 const Intro: React.FC = () => {
@@ -28,12 +32,16 @@ const Intro: React.FC = () => {
         <Grid item xs={12}>
           <HeroImage>
             <HeroText>
-              <Typography variant="h1" gutterBottom fontWeight="bold">
+              <Typography
+                variant="h1"
+                gutterBottom
+                fontWeight="bold"
+                fontSize="4rem"
+              >
                 Welcome to Chillax!
               </Typography>
-              <Typography variant="body1" fontSize="1.7rem">
-                Discover and join amazing events and activities posted by users
-                just like you!
+              <Typography variant="body1" fontSize="1.5rem" fontWeight="bold">
+                Discover and Join Events Posted by Users like You!
               </Typography>
             </HeroText>
           </HeroImage>

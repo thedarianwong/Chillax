@@ -42,7 +42,7 @@ const SearchBar: React.FC = () => {
           backgroundColor: "black",
           width: "80%",
           margin: "auto",
-          padding: "10px",
+          marginTop: "24px",
           justifyContent: "space-between",
         }}
       >
@@ -55,7 +55,7 @@ const SearchBar: React.FC = () => {
           <TextField
             fullWidth
             variant="outlined"
-            placeholder="Search for events or activities"
+            placeholder="Search for Events or Activities"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">

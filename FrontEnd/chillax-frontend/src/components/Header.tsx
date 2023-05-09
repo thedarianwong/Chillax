@@ -9,13 +9,14 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 
 const StyledTitle = styled(Typography)({
   flexGrow: 1,
+  textAlign: "left",
 });
 
 const Header: React.FC = () => {
   return (
     <StyledAppBar position="static">
       <Toolbar>
-        <StyledTitle variant="h3">Chillax</StyledTitle>
+        <StyledTitle variant="h3">Chillax.</StyledTitle>
         <IconButton color="inherit">
           <AccountCircle />
         </IconButton>
