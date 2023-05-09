@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Typography, IconButton, styled } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
-  marginBottom: theme.spacing(2),
+  boxShadow: "none",
 }));
 
 const StyledTitle = styled(Typography)({

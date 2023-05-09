@@ -1,9 +1,9 @@
 import React from "react";
-import { Container, Grid, Paper, Typography, styled } from "@mui/material";
+import { Grid, Paper, Typography, styled, Box } from "@mui/material";
 
 const HeroImage = styled(Paper)({
   height: "50vh",
-  // background: ""
+
   backgroundSize: "cover",
   backgroundPosition: "center",
   display: "flex",
@@ -18,7 +18,7 @@ const HeroText = styled("div")(({ theme }) => ({
 
 const Intro: React.FC = () => {
   return (
-    <Container>
+    <Box sx={{ width: "100%", padding: 0 }}>
       <Grid container>
         <Grid item xs={12}>
           <HeroImage>
@@ -34,7 +34,7 @@ const Intro: React.FC = () => {
           </HeroImage>
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 };
 
