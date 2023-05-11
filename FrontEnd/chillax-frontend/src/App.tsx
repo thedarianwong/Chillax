@@ -5,6 +5,7 @@ import Intro from "./components/Intro";
 import SearchBar from "./components/SearchBar";
 import Activities from "./components/Activities";
 import Feedback from "./components/Feedback";
+import Footer from "./components/Footer";
 
 const App: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const App: React.FC = () => {
       <SearchBar />
       <Activities />
       <Feedback />
+      <Footer />
     </div>
   );
 };
