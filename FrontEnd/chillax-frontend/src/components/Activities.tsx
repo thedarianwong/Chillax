@@ -75,14 +75,15 @@ const Activities: React.FC = () => {
   );
 
   return (
-    <Box sx={{ width: "90%", margin: "auto" }}>
+    <Box sx={{ width: "97.5%", margin: "auto" }}>
       <Grid container spacing={4}>
         {paginatedActivities.map((activity) => (
           <Grid item key={activity.id} xs={12} sm={6}>
-            <Card>
+            <Card sx={{ borderRadius: "10px" }}>
               <CardMedia
                 component="img"
                 height="auto"
+                width="auto"
                 image={activity.imageUrl}
                 alt={activity.title}
               />
