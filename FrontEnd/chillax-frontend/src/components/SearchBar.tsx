@@ -41,8 +41,7 @@ const SearchBar: React.FC = () => {
         sx={{
           backgroundColor: "black",
           width: "80%",
-          margin: "auto",
-          marginTop: "24px",
+          margin: "24px auto 24px",
           justifyContent: "space-between",
         }}
       >
