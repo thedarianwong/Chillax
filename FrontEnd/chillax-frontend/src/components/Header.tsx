@@ -1,5 +1,14 @@
 import React from "react";
-import { AppBar, Toolbar, Typography, IconButton, styled } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  IconButton,
+  Button,
+  styled,
+  Menu,
+  MenuItem,
+} from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -13,13 +22,44 @@ const StyledTitle = styled(Typography)({
 });
 
 const Header: React.FC = () => {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
-    <StyledAppBar position="static">
+    <StyledAppBar position="fixed">
       <Toolbar>
         <StyledTitle variant="h3">Chillax.</StyledTitle>
-        <IconButton color="inherit">
+        <Button
+          sx={{
+            border: "1px solid white",
+            borderColor: "white",
+            color: "inherit",
+            marginRight: "1rem",
+          }}
+        >
+          Sign Up
+        </Button>
+        <IconButton color="inherit" onClick={handleClick}>
           <AccountCircle />
         </IconButton>
+        <Menu
+          id="profile-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          <MenuItem onClick={handleClose}>Profile</MenuItem>
+          <MenuItem onClick={handleClose}>My Account</MenuItem>
+          <MenuItem onClick={handleClose}>Logout</MenuItem>
+        </Menu>
       </Toolbar>
     </StyledAppBar>
   );
