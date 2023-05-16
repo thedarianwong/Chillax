@@ -8,6 +8,8 @@ export class JoinService {
 
     insertProduct(name: string, email: string, msg: string) {
 
+        console.log(name, email, msg); 
+
         // Test Statement
         if (name == "Yuta") {
             const newJoin = new Join(name, email, msg); 

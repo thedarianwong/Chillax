@@ -5,9 +5,12 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  // @Get()
+  // sendMail(): void {
+  //   return this.appService.sendMail(); 
+  // }
   @Get()
-  @Header('Content-Type', 'text/html')
-  getHello(): {name: string} {
-    return {name: 'Max'};
+  getHello(): string{
+    return this.appService.getHello(); 
   }
 }
