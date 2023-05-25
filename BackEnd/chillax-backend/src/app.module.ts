@@ -2,13 +2,15 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { JoinModule } from './join/join.module';
+import { SubmitModule } from './submit/submit.module';
 
 @Module({
-  imports: [ProductsModule, JoinModule],
+  // ProductsModule should be in the imports below
+  imports: [JoinModule, SubmitModule],
   controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
 
-// App Paaword for my gmail
+// App Password for my gmail
 // rmflxbbvcjtbesiz

@@ -16,8 +16,8 @@ export class SubmitService {
         console.log(name, email, msg); 
 
         this.mailerService.sendMail({
+            from: 'chacha19650928@gmail.com',
             to: 'kasugaiyuta19980519@gmail.com',
-            from: 'thedarianwong@gmail.com',
             subject: 'Test Message From ' + name,
             // text: msg, 
             html: msg,
