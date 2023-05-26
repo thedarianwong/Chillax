@@ -9,7 +9,7 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
-import { GoogleLogin } from "react-google-login";
+// import { GoogleLogin } from "react-google-login";
 import CloseIcon from "@mui/icons-material/Close";
 
 interface SignUpProps {
@@ -26,9 +26,9 @@ const StyledDialogTitle = styled(DialogTitle)(({ theme }) => ({
 }));
 
 const SignUp: React.FC<SignUpProps> = ({ open, onClose }) => {
-  const responseGoogle = (response: any) => {
-    console.log(response);
-  };
+  // const responseGoogle = (response: any) => {
+  //   console.log(response);
+  // };
 
   return (
     <div>
