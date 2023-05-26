@@ -1,29 +1,30 @@
 import { Injectable } from '@nestjs/common';
-
 import { Submit } from './submit.model';
 import { MailerService } from '@nestjs-modules/mailer';
 
-@Injectable() 
+@Injectable()
 export class SubmitService {
-    submit: Submit[] = [];
-    constructor(private readonly mailerService: MailerService) {}
+  submit: Submit[] = [];
 
-    // Passing user inputs and Sending a msg from user email address
+  constructor(private readonly mailerService: MailerService) {}
 
-    // I will try testing with your email address, but sorry it does not work yet
-    sendMail(name: string, email: string, msg: string) {
+  sendMail(name: string, email: string, msg: string) {
+    console.log(name, email, msg);
 
-        console.log(name, email, msg); 
+    // Store the submit data
+    const submitData: Submit = {
+      username: name,
+      email,
+      message: msg,
+    };
+    this.submit.push(submitData);
 
-        this.mailerService.sendMail({
-            from: 'chacha19650928@gmail.com',
-            to: 'kasugaiyuta19980519@gmail.com',
-            subject: 'Test Message From ' + name,
-            // text: msg, 
-            html: msg,
-        })
-    }
+    // Send the email
+    this.mailerService.sendMail({
+      from: 'kasugaiyuta19980519@gmail.com',
+      to: 'thedarianwong@gmail.com',
+      subject: 'Test Message From ' + name,
+      html: msg,
+    });
+  }
 }
-
-
-

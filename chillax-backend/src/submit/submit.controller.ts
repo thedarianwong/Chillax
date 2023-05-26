@@ -1,27 +1,27 @@
-import { Controller, Post, Body, Get} from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { SubmitService } from './submit.service';
+
+interface SubmitData {
+  username: string;
+  email: string;
+  message: string;
+}
 
 @Controller('submit')
 export class SubmitController {
-    constructor(private readonly submitService: SubmitService) {}
+  constructor(private readonly submitService: SubmitService) {}
 
-    @Post()
-    addSubmit(
-        @Body('username') submitUsername: string, 
-        @Body('email') submitEmail: string,
-        @Body('message') submitMessage: string,
-    ) {
-        // const generatedId = this.submitService.insertProduction(
-        //     submitUsername, 
-        //     submitEmail, 
-        //     submitMessage
-        // ); 
+  @Post()
+  addSubmit(@Body() submitData: SubmitData) {
+    const { username, email, message } = submitData;
+    console.log(username, email, message);
 
-        return this.submitService.sendMail(submitUsername, submitEmail, submitMessage); 
-    }
+    return this.submitService.sendMail(username, email, message);
+  }
 
-    // @Get()
-    // sendMail(name: string, email: string, msg: string) {
-    //     return this.submitService.sendMail(name, email, msg); 
-    // }
+  @Get()
+  sendMail(@Body() submitData: SubmitData) {
+    const { username, email, message } = submitData;
+    return this.submitService.sendMail(username, email, message);
+  }
 }
